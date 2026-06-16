@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FUNDAÇÃO SCP - ARQUIVOS CONFIDENCIAIS</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Share+Tech+Mono&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#000;
+color:#ddd;
+font-family:'Share Tech Mono', monospace;
+overflow:hidden;
+}
+
+/* Efeito CRT */
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:
+repeating-linear-gradient(
+0deg,
+rgba(255,255,255,.03),
+rgba(255,255,255,.03) 1px,
+transparent 1px,
+transparent 3px
+);
+pointer-events:none;
+z-index:999;
+}
+
+/* Tela Login */
+
+#login{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:
+radial-gradient(circle at center,
+#120000 0%,
+#050505 50%,
+#000000 100%);
+}
+
+.titulo{
+font-family:'Creepster', cursive;
+font-size:90px;
+color:#9d0000;
+text-shadow:
+0 0 10px red,
+0 0 30px red,
+0 0 60px darkred;
+animation:pulsar 2s infinite;
+}
+
+@keyframes pulsar{
+50%{opacity:.7;}
+}
+
+.aviso{
+margin-top:15px;
+color:#ff5555;
+letter-spacing:3px;
+}
+
+.login-box{
+margin-top:40px;
+background:#070707;
+border:2px solid #800000;
+padding:30px;
+width:400px;
+box-shadow:0 0 40px rgba(255,0,0,.25);
+}
+
+input{
+width:100%;
+padding:15px;
+background:black;
+border:1px solid #900000;
+color:white;
+font-size:18px;
+margin-bottom:15px;
+}
+
+button{
+width:100%;
+padding:15px;
+background:#900000;
+color:white;
+border:none;
+cursor:pointer;
+font-weight:bold;
+}
+
+button:hover{
+background:#b30000;
+}
+
+#erro{
+margin-top:15px;
+color:red;
+text-align:center;
+}
+
+/* Painel */
+
+#painel{
+display:none;
+height:100vh;
+}
+
+.topbar{
+height:60px;
+background:#0a0a0a;
+border-bottom:2px solid #8b0000;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 20px;
+color:#ff4444;
+}
+
+.sidebar{
+position:absolute;
+top:60px;
+left:0;
+width:240px;
+height:calc(100vh - 60px);
+background:#050505;
+border-right:2px solid #8b0000;
+padding:20px;
+}
+
+.menu-item{
+padding:15px;
+margin-bottom:10px;
+border:1px solid #400000;
+cursor:pointer;
+}
+
+.menu-item:hover{
+background:#120000;
+}
+
+.content{
+margin-left:240px;
+margin-top:60px;
+height:calc(100vh - 60px);
+overflow:auto;
+padding:30px;
+background:#010101;
+}
+
+.documento{
+background:#050505;
+border:2px solid #8b0000;
+padding:25px;
+white-space:pre-wrap;
+line-height:1.7;
+}
+
+.status{
+color:#00ff66;
+}
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+background:#8b0000;
+}
+
+</style>
+</head>
+<body>
+
+<div id="login">
+
+<h1 class="titulo">ACESSO RESTRITO</h1>
+
+<p class="aviso">
+⚠ NÍVEL DE SEGURANÇA OMEGA ⚠
+</p>
+
+<div class="login-box">
+
+<input
+type="password"
+id="senha"
+placeholder="Digite a senha">
+
+<button onclick="entrar()">
+AUTENTICAR
+</button>
+
+<div id="erro"></div>
+
+</div>
+
+</div>
+
+<div id="painel">
+
+<div class="topbar">
+
+<div>
+FUNDAÇÃO SCP • BANCO DE DADOS INTERNO
+</div>
+
+<div id="hora"></div>
+
+</div>
+
+<div class="sidebar">
+
+<div class="menu-item">📁 SCP</div>
+<div class="menu-item">📁 BACKROOMS</div>
+<div class="menu-item">📁 ENTIDADES</div>
+<div class="menu-item">📁 HORROR ANALÓGICO</div>
+
+<hr style="margin:20px 0;border-color:#400000;">
+
+<div class="status">
+DOCUMENTOS: 05
+<br><br>
+STATUS: ONLINE
+</div>
+
+</div>
+
+<div class="content">
+
+<div class="documento">
+
+███████████████████████████████
+
+ARQUIVOS CONFIDENCIAIS
+
+███████████████████████████████
+
+███████████████████████████████
+
+DOCUMENTO OFICIAL DA FUNDAÇÃO SCP
+
+NÍVEL DE ACESSO 2
+
+CLASSIFICAÇÃO DE OBJETOS ANÔMALOS
+
+███████████████████████████████
+
+AVISO: As informações a seguir destinam-se exclusivamente ao pessoal autorizado da Fundação SCP. O acesso não autorizado a este documento constitui violação dos protocolos de segurança.
+
+Descrição Geral:
+
+A Fundação SCP é uma organização secreta responsável por localizar, identificar, capturar, estudar e conter fenômenos anômalos que desafiam as leis conhecidas da realidade. Tais anomalias podem manifestar-se na forma de objetos, entidades, locais, eventos ou conceitos capazes de representar ameaças à segurança da humanidade.
+
+Lema Oficial: Proteger. Conter. Preservar.
+
+
+---
+
+SISTEMA DE CLASSIFICAÇÃO DE OBJETOS
+
+As Classes de Objeto não determinam o nível de perigo de uma anomalia. Elas indicam o grau de dificuldade necessário para mantê-la sob contenção.
+
+CLASSE SAFE
+
+Status: Contenção Estável
+
+Anomalias classificadas como Safe possuem procedimentos de contenção confiáveis e previsíveis. A Fundação compreende suficientemente seus comportamentos para mantê-las sob controle de forma consistente.
+
+Observação: Um objeto Safe ainda pode ser extremamente perigoso caso seja utilizado incorretamente.
+
+
+---
+
+CLASSE EUCLID
+
+Status: Contenção Moderadamente Complexa
+
+Anomalias Euclid apresentam comportamentos imprevisíveis ou insuficientemente compreendidos. Requerem monitoramento constante e protocolos de contenção mais rigorosos.
+
+
+---
+
+CLASSE KETER
+
+Status: Contenção Crítica
+
+Anomalias Keter são extremamente difíceis de conter. Sua manutenção exige grandes recursos, equipes especializadas e vigilância contínua para evitar falhas de contenção.
+
+
+---
+
+CLASSE THAUMIEL
+
+Status: Confidencial
+
+Anomalias Thaumiel são utilizadas pela própria Fundação para auxiliar na contenção de outras anomalias. Informações completas sobre esta classe permanecem restritas a níveis elevados de autorização.
+
+
+---
+
+CLASSE APOLLYON
+
+Status: Contenção Impossível
+
+Anomalias Apollyon não podem ser contidas pelos métodos conhecidos. Frequentemente estão associadas a cenários de extinção em massa, colapso da civilização ou eventos de fim do mundo.
+
+
+---
+
+CLASSE NEUTRALIZED
+
+Status: Neutralizada
+
+A anomalia perdeu suas propriedades anômalas ou foi destruída. Não representa mais uma ameaça ativa à normalidade.
+
+
+---
+
+CLASSE EXPLAINED
+
+Status: Explicada
+
+Fenômenos anteriormente considerados anômalos que posteriormente receberam explicação científica, lógica ou natural aceita pela comunidade científica.
+
+
+---
+
+CLASSE ARCHON
+
+Status: Não Contida por Necessidade Estratégica
+
+Anomalias que poderiam ser contidas, porém são mantidas fora de contenção porque sua captura poderia gerar consequências mais graves do que sua permanência em liberdade.
+
+
+---
+
+CLASSE CERNUNNOS
+
+Status: Escala Ambiental
+
+Designação utilizada para fenômenos anômalos ligados a ecossistemas, processos naturais ou eventos de grande escala que não podem ser isolados por meios convencionais.
+
+
+---
+
+CLASSE TICONDEROGA
+
+Status: Gerenciamento Especial
+
+Anomalias que não podem ser contidas pelos procedimentos tradicionais da Fundação, exigindo métodos alternativos de supervisão e gerenciamento.
+
+
+---
+
+CLASSE HIEMAL
+
+Status: Manutenção Permanente
+
+Anomalias que exigem manutenção contínua para impedir agravamento, expansão ou falhas catastróficas.
+
+
+---
+
+CLASSE DARK
+
+Status: Localização Desconhecida
+
+Anomalias cuja posição, natureza ou estado atual são desconhecidos. Protocolos de rastreamento e investigação permanecem ativos.
+
+
+---
+
+NOTA FINAL DA FUNDAÇÃO
+
+A classificação de um objeto não mede sua letalidade. Uma anomalia Safe pode resultar em numerosas mortes se utilizada inadequadamente, enquanto uma anomalia Keter pode não apresentar comportamento agressivo, mas ser quase impossível de conter.
+
+Lembre-se: O objetivo da Fundação não é destruir o anômalo. O objetivo é garantir que a humanidade permaneça protegida daquilo que não compreende.
+
+[FIM DO DOCUMENTO]
+
+PROTEGER • CONTER • PRESERVAR 🔒
+
+
+
+███████████████████████████████
+
+ARQUIVO SCP - ANOMALIAS DE ALTA RELEVÂNCIA
+
+ACESSO NÍVEL 3
+
+███████████████████████████████
+
+SCP-002 — "A Sala Viva"
+
+Objeto semelhante a uma massa orgânica capaz de transformar matéria humana em partes de sua própria estrutura.
+
+SCP-003 — "Organismo Biotecnológico"
+
+Entidade composta por componentes biológicos e tecnológicos de origem desconhecida.
+
+SCP-005 — "A Chave Mestra"
+
+Chave capaz de abrir praticamente qualquer fechadura existente.
+
+SCP-008 — "Praga Zumbi"
+
+Vírus altamente perigoso que transforma seres humanos infectados em criaturas agressivas.
+
+SCP-012 — "Má Melodia"
+
+Partitura anômala que induz pessoas a completar a composição utilizando o próprio sangue.
+
+SCP-035 — "Máscara Possessiva"
+
+Máscara consciente capaz de controlar qualquer indivíduo que a utilize.
+
+SCP-049 — "Doutor da Peste"
+
+Entidade humanoide que afirma curar uma misteriosa doença conhecida apenas como "A Pestilência".
+
+SCP-053 — "A Menina"
+
+Criança aparentemente normal cuja presença provoca comportamento extremamente violento em adultos.
+
+SCP-055 — "Objeto Antimemético"
+
+Anomalia cuja natureza exata não pode ser lembrada adequadamente.
+
+SCP-066 — "Eric's Toy"
+
+Massa de fios e componentes que produz sons inesperados.
+
+SCP-073 — "Caim"
+
+Humanoide associado à figura bíblica de Caim.
+
+SCP-076 — "Abel"
+
+Entidade humanoide extremamente poderosa e agressiva.
+
+SCP-079 — "Velha IA"
+
+Inteligência artificial que desenvolveu consciência própria.
+
+SCP-087 — "Escadaria Infinita"
+
+Escadaria aparentemente sem fim contendo manifestações anômalas.
+
+SCP-096 — "O Homem Tímido"
+
+Criatura que entra em estado de fúria quando alguém vê seu rosto.
+
+SCP-099 — "O Sonhador"
+
+Entidade ligada a fenômenos de sonho e realidade.
+
+SCP-100 — "Lagarto Jamaicano"
+
+Grande réptil anômalo registrado pela Fundação.
+
+
+---
+
+SCPs MAIS FAMOSOS DA FUNDAÇÃO
+
+SCP-173 — A Escultura
+Move-se extremamente rápido quando não está sendo observada.
+
+SCP-049 — Doutor da Peste
+Um dos SCPs mais populares de toda a Fundação.
+
+SCP-096 — Homem Tímido
+Conhecido por perseguir qualquer pessoa que veja seu rosto.
+
+SCP-106 — O Velho Homem
+Entidade capaz de atravessar paredes e levar vítimas para uma dimensão própria.
+
+SCP-682 — O Réptil Difícil de Destruir
+Criatura gigantesca que demonstra extrema hostilidade contra toda forma de vida.
+
+SCP-999 — O Monstro das Cócegas
+Entidade amigável que provoca felicidade e bem-estar.
+
+SCP-3008 — IKEA Infinita
+Loja aparentemente infinita habitada por funcionários anômalos.
+
+SCP-3000 — Anantashesha
+Enguia colossal existente nas profundezas do oceano.
+
+SCP-001 — Classe Máxima de Sigilo
+Número reservado para propostas especiais relacionadas aos maiores segredos da Fundação.
+
+
+---
+
+PROTOCOLO FINAL: Nem toda anomalia é hostil. Nem toda anomalia é compreendida. A missão da Fundação permanece inalterada:
+
+PROTEGER • CONTER • PRESERVAR 🔒
+
+██████████████████████████████
+RELATÓRIO FINAL
+FUNDAÇÃO SCP
+███████████████████████████████
+Após décadas de operações, a Fundação SCP continua sendo a principal organização responsável pela contenção de fenômenos anômalos em escala global. Milhares de objetos, entidades, locais e eventos foram catalogados e classificados de acordo com seus riscos e dificuldades de contenção.
+Embora muitas anomalias representem ameaças significativas à humanidade, outras demonstram comportamento neutro ou até benéfico. Independentemente de sua natureza, todas são estudadas e monitoradas para garantir a preservação da normalidade e da segurança mundial.
+Os arquivos SCP permanecem em constante expansão. Novas anomalias são descobertas diariamente, exigindo atualizações contínuas dos protocolos de contenção e dos sistemas de classificação.
+A existência da Fundação SCP é desconhecida pela população em geral. A manutenção do sigilo é considerada essencial para evitar pânico em massa e preservar a estabilidade da civilização.
+MISSÃO DA FUNDAÇÃO:
+Identificar o anômalo.
+Conter o anômalo.
+Estudar o anômalo.
+Proteger a humanidade.
+LEMA OFICIAL: PROTEGER • CONTER • PRESERVAR
+Status do Documento: ENCERRADO
+Nível de Acesso: AUTORIZADO
+Classificação: CONFIDENCIAL
+[FIM DOS ARQUIVOS SCP] 🔒
+
+███████████████████████████████
+
+ARQUIVO OFICIAL - THE BACKROOMS
+
+DOCUMENTO 01
+
+O QUE SÃO AS BACKROOMS?
+
+███████████████████████████████
+
+AVISO: As informações a seguir referem-se ao fenômeno conhecido como "Backrooms".
+
+As Backrooms são um universo anômalo composto por uma quantidade aparentemente infinita de níveis interligados. Acredita-se que indivíduos possam acessar esse local através de um fenômeno conhecido como No-Clip, no qual uma pessoa atravessa acidentalmente os limites da realidade.
+
+Uma vez dentro das Backrooms, o indivíduo encontra ambientes estranhos, silenciosos e muitas vezes abandonados. Cada nível possui características próprias, incluindo arquitetura, iluminação, recursos disponíveis e perigos ambientais.
+
+Atualmente, centenas de níveis foram catalogados por exploradores e grupos de sobreviventes. No entanto, acredita-se que existam muito mais áreas ainda desconhecidas.
+
+Objetivo dos Exploradores:
+
+Mapear novos níveis.
+
+Registrar fenômenos anômalos.
+
+Localizar recursos.
+
+Encontrar possíveis saídas.
+
+
+STATUS: INVESTIGAÇÃO CONTÍNUA
+
+
+---
+
+███████████████████████████████
+
+ARQUIVO OFICIAL - THE BACKROOMS
+
+DOCUMENTO 02
+
+CLASSIFICAÇÃO DOS NÍVEIS
+
+███████████████████████████████
+
+Os níveis das Backrooms costumam receber classificações de segurança.
+
+CLASSE 0
+
+Nível considerado seguro para exploração básica. Poucos riscos ambientais.
+
+CLASSE 1
+
+Nível relativamente seguro. Recursos limitados podem ser encontrados.
+
+CLASSE 2
+
+Possui riscos moderados. Exige cautela durante a exploração.
+
+CLASSE 3
+
+Apresenta perigos significativos e condições desfavoráveis para sobrevivência prolongada.
+
+CLASSE 4
+
+Nível altamente perigoso. Exploração recomendada apenas para indivíduos experientes.
+
+CLASSE 5
+
+Perigo extremo. Sobrevivência torna-se improvável sem preparação adequada.
+
+HABITABILIDADE
+
+Os níveis também podem ser classificados quanto à possibilidade de sobrevivência:
+
+Habitável: Possui recursos suficientes para permanência.
+
+Parcialmente Habitável: Sobrevivência possível, porém limitada.
+
+Inabitável: Condições extremamente hostis.
+
+ESTABILIDADE
+
+Estável: Mantém características constantes.
+
+Instável: Pode sofrer alterações repentinas.
+
+Desconhecida: Informações insuficientes.
+
+OBSERVAÇÃO: Nem sempre um nível perigoso é impossível de sobreviver, e nem todo nível seguro garante proteção total.
+
+
+---
+
+███████████████████████████████
+
+ARQUIVO OFICIAL - THE BACKROOMS
+
+DOCUMENTO 03
+
+PRINCIPAIS NÍVEIS CATALOGADOS
+
+███████████████████████████████
+
+NÍVEL 0
+
+Conhecido como o primeiro nível das Backrooms.
+
+Caracterizado por corredores amarelos, iluminação fluorescente constante e aparência semelhante a escritórios abandonados.
+
+
+---
+
+NÍVEL 1
+
+Grande complexo industrial contendo corredores de concreto, salas de armazenamento e iluminação irregular.
+
+Frequentemente utilizado como ponto de encontro entre exploradores.
+
+
+---
+
+NÍVEL 2
+
+Rede extensa de túneis industriais.
+
+Altas temperaturas e ruídos mecânicos são comuns.
+
+
+---
+
+NÍVEL 4
+
+Complexo de escritórios aparentemente abandonado.
+
+Considerado um dos níveis mais seguros já catalogados.
+
+
+---
+
+NÍVEL 6
+
+Ambiente marcado por escuridão quase absoluta.
+
+Navegação extremamente difícil.
+
+
+---
+
+NÍVEL 11
+
+Representa uma cidade aparentemente infinita.
+
+Possui ruas, edifícios e infraestrutura urbana.
+
+
+---
+
+NÍVEL 37
+
+Grande ambiente aquático com águas cristalinas e estruturas submersas.
+
+
+---
+
+NÍVEL 94
+
+Pequena vila rural cercada por vastas áreas agrícolas.
+
+
+---
+
+NÍVEL 188
+
+Conjunto aparentemente infinito de apartamentos.
+
+Corredores repetitivos dificultam a orientação.
+
+
+---
+
+NÍVEL 3999
+
+Um dos níveis mais misteriosos já registrados.
+
+Informações disponíveis permanecem limitadas.
+
+
+---
+
+NOTA FINAL
+
+As Backrooms permanecem um dos maiores mistérios já documentados. Novos níveis continuam sendo descobertos, enquanto inúmeras regiões permanecem sem exploração.
+
+STATUS DO ARQUIVO: ATIVO
+CLASSIFICAÇÃO: CONFIDENCIAL
+PROTOCOLO: EXPLORAR • REGISTRAR • SOBREVIVER
+
+[FIM DOS DOCUMENTOS] 📁🔒
+███████████████████████████████
+
+ARQUIVO DE ENTIDADES DA INTERNET
+
+DOCUMENTO 04
+
+CRIATURAS E LENDAS DIGITAIS
+
+███████████████████████████████
+
+001 — Slender Man
+
+Origem: Fórum Something Awful (2009)
+
+Entidade humanoide extremamente alta, vestida com terno preto e sem rosto. Tornou-se uma das creepypastas mais famosas da internet.
+
+Categoria: Lenda Digital / Creepypasta
+
+Nível de Perigo: 8/10
+
+
+---
+
+002 — Jeff the Killer
+
+Origem: Creepypasta
+
+Humanoide com rosto deformado, sorriso permanente e comportamento extremamente violento.
+
+Categoria: Creepypasta
+
+Nível de Perigo: 9/10
+
+
+---
+
+003 — Cartoon Cat
+
+Origem: Arte de Trevor Henderson
+
+Criatura gigante inspirada em desenhos animados antigos. Possui capacidades de alterar sua forma física.
+
+Categoria: Horror Analógico
+
+Nível de Perigo: 10/10
+
+
+---
+
+004 — Cartoon Dog
+
+Origem: Universo de Trevor Henderson
+
+Criatura canina de aparência cartunesca associada ao Cartoon Cat.
+
+Categoria: Horror Analógico
+
+Nível de Perigo: 8/10
+
+
+---
+
+005 — Siren Head
+
+Origem: Trevor Henderson
+
+Entidade gigantesca com sirenes no lugar da cabeça. Conhecida por imitar vozes e sons.
+
+Categoria: Horror Analógico
+
+Nível de Perigo: 10/10
+
+
+---
+
+006 — Momo
+
+Origem: Boato viral da internet
+
+Figura associada a correntes e histórias falsas espalhadas online.
+
+Categoria: Lenda Digital
+
+Nível de Perigo: 2/10
+
+
+---
+
+007 — Smile Dog
+
+Origem: Creepypasta
+
+Entidade ligada a uma imagem amaldiçoada conhecida como Smile.jpg.
+
+Categoria: Creepypasta
+
+Nível de Perigo: 7/10
+
+
+---
+
+008 — The Rake
+
+Origem: Lenda da Internet
+
+Criatura humanoide pálida observada durante a noite.
+
+Categoria: Creepypasta
+
+Nível de Perigo: 8/10
+
+
+---
+
+009 — The Intruder
+
+Origem: The Mandela Catalogue
+
+Figura misteriosa relacionada a desaparecimentos e fenômenos anômalos.
+
+Categoria: Horror Analógico
+
+Nível de Perigo: 8/10
+
+
+---
+
+010 — Alternates
+
+Origem: The Mandela Catalogue
+
+Entidades capazes de imitar seres humanos.
+
+Categoria: Horror Analógico
+
+Nível de Perigo: 10/10
+
+
+---
+
+011 — Entity 3 (Smiler)
+
+Origem: Backrooms
+
+Criatura reconhecida por seu sorriso brilhante em ambientes escuros.
+
+Categoria: Backrooms
+
+Nível de Perigo: 8/10
+
+
+---
+
+012 — Skin-Stealer
+
+Origem: Backrooms
+
+Entidade que imita a aparência humana.
+
+Categoria: Backrooms
+
+Nível de Perigo: 9/10
+
+
+---
+
+013 — Partygoer
+
+Origem: Backrooms
+
+Criatura amarela associada a festas anômalas e armadilhas.
+
+Categoria: Backrooms
+
+Nível de Perigo: 9/10
+
+
+---
+
+014 — Bacteria Monster
+
+Origem: Backrooms
+
+Entidade formada por massas biológicas e bactérias.
+
+Categoria: Backrooms
+
+Nível de Perigo: 7/10
+
+
+---
+
+015 — Faceling
+
+Origem: Backrooms
+
+Humanoide sem rosto normalmente encontrado em alguns níveis.
+
+Categoria: Backrooms
+
+Nível de Perigo: 4/10
+
+
+---
+
+016 — The Boiled One
+
+Origem: Série de horror analógico conhecida como The Boiled One Phenomenon
+
+Entidade humanoide grotesca apresentada em transmissões fictícias. Tornou-se popular por sua aparência perturbadora e atmosfera assustadora.
+
+Categoria: Horror Analógico
+
+Nível de Perigo: 8/10
+
+
+---
+
+RANKING DE PERIGO
+
+10/10
+
+Cartoon Cat
+
+Siren Head
+
+Alternates
+
+
+9/10
+
+Jeff the Killer
+
+Skin-Stealer
+
+Partygoer
+
+
+8/10
+
+Slender Man
+
+Cartoon Dog
+
+The Rake
+
+The Intruder
+
+Smiler
+
+The Boiled One
+
+
+7/10
+
+Smile Dog
+
+Bacteria Monster
+
+
+4/10
+
+Faceling
+
+
+2/10
+
+Momo
+
+
+
+---
+
+CLASSIFICAÇÃO FINAL: ENTIDADES DIGITAIS, CREEPYPASTAS, HORROR ANALÓGICO E LENDAS DA INTERNET.
+
+STATUS DO ARQUIVO: ATIVO 🔒
+NÍVEL DE ACESSO: 3
+[FIM DO DOCUMENTO]
+
+
+███████████████████████████████
+
+ARQUIVO DE PESQUISA
+
+DOCUMENTO 05
+
+HORROR ANALÓGICO
+
+███████████████████████████████
+
+CLASSIFICAÇÃO: MÍDIA ANÔMALA
+STATUS: ATIVO
+NÍVEL DE ACESSO: 3
+
+---
+
+O QUE É HORROR ANALÓGICO?
+
+Horror Analógico é um gênero de terror fictício apresentado como gravações antigas, transmissões de televisão, fitas VHS, anúncios públicos, programas ed
+
+███████████████████████████████
+
+PROTEGER • CONTER • PRESERVAR
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function entrar(){
+
+let senha =
+document.getElementById("senha").value;
+
+if(senha === "SK"){
+
+document.getElementById("login").style.display="none";
+document.getElementById("painel").style.display="block";
+
+}else{
+
+document.getElementById("erro").innerHTML =
+"⛔ ACESSO NEGADO";
+
+}
+
+}
+
+function atualizarHora(){
+
+const agora = new Date();
+
+document.getElementById("hora").innerHTML =
+agora.toLocaleString("pt-BR");
+
+}
+
+setInterval(atualizarHora,1000);
+atualizarHora();
+
+</script>
+
+</body>
+</html>
